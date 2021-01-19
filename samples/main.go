@@ -1,10 +1,9 @@
-package go_i18n_localizer
+package main
 
 import (
+	. "github.com/killer-djon/go-i18n-localizer"
 	"github.com/killer-djon/go-i18n-localizer/helpers"
-	"log"
 )
-
 
 func main() {
 	//localizerConfig := helpers.ParseJson("./config.json")
@@ -17,5 +16,5 @@ func main() {
 	localizerConfig := helpers.NewTranslationConfig("./config.json")
 	translation := NewTranslation(localizerConfig)
 
-	log.Println("Start localizer", translation)
+	translation.ParseString("simple message", nil, nil)
 }
