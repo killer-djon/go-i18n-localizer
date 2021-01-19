@@ -1,0 +1,3 @@
+simple message: 'Простой текст сообщения'
+message:
+  by_replace: 'Сообщение с заменой текста :replacement'

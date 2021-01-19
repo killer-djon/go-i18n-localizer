@@ -1,0 +1,3 @@
+simple message: 'Simple text message'
+message:
+  by_replace: 'Simple text message with :replacement'
