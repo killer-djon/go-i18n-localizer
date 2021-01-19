@@ -22,7 +22,7 @@ type LocalizerConfig struct {
 
 // NewTranslation create localizer config instance
 // of the structure to implement
-func NewTranslation(configFile ...string) *LocalizerConfig {
+func NewTranslationConfig(configFile ...string) *LocalizerConfig {
 	return ParseJson(configFile...)
 }
 

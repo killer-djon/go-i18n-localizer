@@ -1,4 +1,4 @@
-package main
+package go_i18n_localizer
 
 import (
 	"go-i18n-localizer/helpers"
@@ -14,7 +14,8 @@ func main() {
 	//	DefaultContext:  "user",
 	//}
 
-	localizerConfig := helpers.NewTranslation("./config.json")
+	localizerConfig := helpers.NewTranslationConfig("./config.json")
+	translation := NewTranslation(localizerConfig)
 
-	log.Println("Start localizer", localizerConfig)
+	log.Println("Start localizer", translation)
 }
