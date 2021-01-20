@@ -3,3 +3,6 @@ second_user: 'Второй пользователь'
 user:
   first: 'Первый пользователь 2'
   second: 'Второй пользователь 2'
+  profile:
+    first_name: 'Вася'
+    second_name: 'Иванов'
