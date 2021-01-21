@@ -6,12 +6,9 @@ go:
 
 before_install:
   - go get -t -v ./... && go build -v ./...
-  - bash <(touch config.json)
-  - bash <(echo '{}' > config.json)
 
 script:
   - go test ./...
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - bash <(rm -f config.json)
