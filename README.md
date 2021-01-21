@@ -2,7 +2,7 @@
 Golang translation package inspired by symfony translation component
 
 [![License MIT](https://img.shields.io/apm/l/vim-mode.svg)](https://en.wikipedia.org/wiki/MIT_License)
-[![Build Status](https://travis-ci.com/killer-djon/gimdownloader.svg?branch=master)](https://travis-ci.com/killer-djon/gimdownloader)
+[![Build Status](https://travis-ci.com/killer-djon/go-i18n-localizer.svg?branch=master)](https://travis-ci.com/killer-djon/go-i18n-localizer)
 [![Go Report Card](https://goreportcard.com/badge/github.com/killer-djon/gimdownloader)](https://github.com/killer-djon/go-i18n-localizer)
 
 ### How to user
