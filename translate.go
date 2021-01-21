@@ -13,6 +13,7 @@ import (
 	"strings"
 )
 
+// Translation structure
 type Translation struct {
 	config *helpers.LocalizerConfig
 	texts  map[string]interface{}
@@ -20,6 +21,7 @@ type Translation struct {
 	contexts []string
 }
 
+// NewTranslation create translation instance
 func NewTranslation(config *helpers.LocalizerConfig) *Translation {
 	var trans = Translation{
 		config: config,
@@ -30,6 +32,10 @@ func NewTranslation(config *helpers.LocalizerConfig) *Translation {
 	return &trans
 }
 
+// ParseTextLocalized when load files with messages
+// we must parse them to flatten map
+// then multidimensional map will have flatten structure
+// and all keys can have dot for name like level.level2.level3 ....
 func (trans *Translation) ParseTextLocalized() {
 	transDir := trans.config.TranslationPath
 	files, err := ioutil.ReadDir(transDir)
@@ -85,7 +91,7 @@ func (trans *Translation) FlattenMap(value interface{}, prefix string, m map[str
 	}
 }
 
-// SetBindParams Simple setter for bind params for replacement
+// BindParams Simple setter for bind params for replacement
 func (trans *Translation) BindParams(params map[string]interface{}) {
 	if params != nil {
 		for key, item := range params {
@@ -107,7 +113,7 @@ func (trans *Translation) BindParams(params map[string]interface{}) {
 	}
 }
 
-// SetUsedContexts instantiate used contexts for display messages by key
+// SetContexts instantiate used contexts for display messages by key
 func (trans *Translation) SetContexts(context ...string) {
 	var defaultContext = []string{trans.config.DefaultContext}
 	if len(context) > 0 {

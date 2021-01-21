@@ -1,6 +1,6 @@
 simple message: 'Простой текст сообщения'
 message:
-  by_replace: 'Сообщение с заменой текста :replacement :last_name'
+  by_replace: 'Сообщение с заменой текста :replacement :last_name :count'
 user:
   profile:
     second_name: "Пупкин"

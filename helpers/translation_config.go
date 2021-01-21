@@ -20,6 +20,12 @@ type LocalizerConfig struct {
 	DefaultContext  string `json:"default_context"`
 }
 
+var DefaultLocaleConfig = LocalizerConfig{
+	Locale:          DEFAULT_LOCALE,
+	TranslationPath: DEFAULT_TRANSLATION_PATH,
+	DefaultContext:  DEFAULT_CONTEXT,
+}
+
 // NewTranslation create localizer config instance
 // of the structure to implement
 func NewTranslationConfig(configFile ...string) *LocalizerConfig {
@@ -34,12 +40,6 @@ func ParseJson(configFile ...string) *LocalizerConfig {
 		cFile = &configFile[0]
 	}
 
-	var localeConfig = LocalizerConfig{
-		Locale:          DEFAULT_LOCALE,
-		TranslationPath: DEFAULT_TRANSLATION_PATH,
-		DefaultContext:  DEFAULT_CONTEXT,
-	}
-
 	if cFile != nil {
 		jsonFile, err := os.Open(*cFile)
 
@@ -52,7 +52,7 @@ func ParseJson(configFile ...string) *LocalizerConfig {
 
 
 		decoder := json.NewDecoder(jsonFile)
-		err = decoder.Decode(&localeConfig)
+		err = decoder.Decode(&DefaultLocaleConfig)
 
 		if err != nil {
 			log.Println("Can't decode json config file, check json config and try again", err)
@@ -60,6 +60,6 @@ func ParseJson(configFile ...string) *LocalizerConfig {
 		}
 	}
 
-	return &localeConfig
+	return &DefaultLocaleConfig
 }
 

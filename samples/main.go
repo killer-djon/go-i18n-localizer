@@ -21,6 +21,7 @@ func main() {
 	translation.BindParams(map[string]interface{}{
 		":replacement": "Иванов",
 		":last_name": "Петров",
+		":count": 2,
 	})
 	msg := translation.ParseString("message.by_replace")
 
